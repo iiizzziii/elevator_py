@@ -6,7 +6,7 @@ def passenger_request() -> int:
     
     call = random.randint(0,10)
     
-    print(f"privolali ma na {call}.poschodie...idem tam")
+    print(f"privolali ma na {call}.poschodie...idem tam"); sleep(1)
     
     return call
 
@@ -23,15 +23,15 @@ def passenger_ride() -> int:
             
         if floor_request in range(11):
             
-            print(f"ideme na {floor_request}.poschodie")
+            print(f"ideme na {floor_request}.poschodie"); sleep(0.5)
             return floor_request
 
 
 def go_up(request: int, floor: int) -> int:
 
     while request != floor:
-        print(floor)
-        print("idem hore")
+        print(floor); sleep(0.5)
+        print("idem hore"); sleep(0.5)
         floor += 1
         
     print(floor)
@@ -42,8 +42,8 @@ def go_up(request: int, floor: int) -> int:
 def go_down(request: int, floor: int) -> int:
     
     while request != floor:
-        print(floor)
-        print("idem dole")
+        print(floor); sleep(0.5)
+        print("idem dole"); sleep(0.5)
         floor -= 1
         
     print(floor)
@@ -76,7 +76,7 @@ def decision(request: int, floor: int):
         new_floor = go_down(request, floor)
         message = exit_message(new_floor)
     
-    print(message)
+    print(message); sleep(1)
     
     return new_floor
 
@@ -89,10 +89,11 @@ def elevator():
         print(item); sleep(1)
 
     ride = 1
-    
-    while ride < 3:
+    start_floor = 0
+
+    while ride < 5:
         
-        start_floor = 0
+        # start_floor = 0
         
         p_request = passenger_request()
         
@@ -101,6 +102,8 @@ def elevator():
         p_selection = passenger_ride()
         
         p_ride = decision(p_selection, p_pickup)
+
+        print("DOVIDENIA"); sleep(0.7)
         
         start_floor = p_ride
         
