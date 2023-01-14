@@ -93,8 +93,6 @@ def elevator():
 
     while ride < 5:
         
-        # start_floor = 0
-        
         p_request = passenger_request()
         
         p_pickup = decision(p_request, start_floor)
